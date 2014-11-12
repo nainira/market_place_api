@@ -13,6 +13,12 @@ gem 'active_model_serializers'
 group :doc do
   gem 'sdoc', require: false
 end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
 # gem 'turbolinks'
 # gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
