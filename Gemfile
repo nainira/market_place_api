@@ -19,6 +19,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
 end
+
+gem 'devise'
 # gem 'turbolinks'
 # gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
