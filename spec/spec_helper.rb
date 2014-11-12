@@ -83,3 +83,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+ActiveRecord::Migration.maintain_test_schema! if defined?(ActiveRecord::Migration)
