@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails',            '4.1.7'
 gem 'bcrypt'
 gem 'pg'
@@ -14,11 +13,21 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'rb-fsevent'      , require: false
+  gem 'guard-livereload', require: false
+  gem 'spring-commands-rspec'
+  gem "shoulda-matchers", require: false
+end
+
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'guard-rspec'
 end
+
+gem 'devise'
 # gem 'turbolinks'
 # gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
