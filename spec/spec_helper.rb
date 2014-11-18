@@ -19,7 +19,6 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
-  # config.include Devise::TestHelpers, :type => :controller
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
@@ -52,6 +51,7 @@ RSpec.configure do |config|
   config.include Request::JsonHelpers, :type => :controller
   config.include Request::HeadersHelpers, :type => :controller
   config.include Devise::TestHelpers, :type => :controller
+  # config.include ControllerHelpers, :type => :controller
 
   config.before(:each, type: :controller) do
     include_default_accept_headers

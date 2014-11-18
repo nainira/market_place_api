@@ -1,5 +1,4 @@
 require 'rails_helper'
-# require 'spec_helper'
 RSpec.describe Api::V1::SessionsController, :type => :controller do
   describe "Post #create" do
 
