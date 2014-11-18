@@ -17,7 +17,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
         expect(json_response[:auth_token]).to eql @user.auth_token
       end #returns the user record corresponding to the given credentials
 
-      it { should respond_with 200 }
+      it { is_expected.to respond_with 200 }
     end #when the credentials are correct
 
     context "when the credentials are incorrect" do
@@ -31,7 +31,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
         expect(json_response[:errors]).to eql "Invalid email or password"
       end
 
-      it { should respond_with 422 }
+      it { is_expected.to respond_with 422 }
     end # when the credentials are incorrect
   end # Post #create
 
@@ -43,7 +43,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
       delete :destroy, id: @user.auth_token
     end
 
-    it { should respond_with 204 }
+    it { is_expected.to respond_with 204 }
 
   end
 end
