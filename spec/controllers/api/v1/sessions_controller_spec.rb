@@ -1,5 +1,7 @@
 require 'rails_helper'
 RSpec.describe Api::V1::SessionsController, :type => :controller do
+  before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime::JSON}" }
+  before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
   describe "Post #create" do
 
     before(:each) do

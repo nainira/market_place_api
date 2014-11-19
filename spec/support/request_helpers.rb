@@ -8,10 +8,12 @@ module Request
   module HeadersHelpers
     def api_header(version = 1)
       request.headers['Accept'] = "application/vnd.marketplace.v#{version}"
+      # request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime::JSON}"
     end
 
     def api_response_format(format = Mime::JSON)
-      request.headers['Accpet'] = "#{request.headers['Accept']}, #{format}"
+      # request.headers['Accpet'] = "#{request.headers['Accept']}, #{format}"
+      request.headers['Accept'] = "#{api_header}, #{Mime::JSON}"
       request.headers['Content-Type'] = format.to_s
     end
 

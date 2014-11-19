@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, :type => :controller do
   # we concatenate the json format
-  before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime::JSON}" }
-  before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
+  # before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime::JSON}" }
+  # before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
   describe "Get #show" do
     before(:each) do
       @user = FactoryGirl.create :user
