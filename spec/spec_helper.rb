@@ -59,5 +59,6 @@ RSpec.configure do |config|
 
 end
 RspecApiDocumentation.configure do |config|
-  config.format = :json
+  config.format = [:json, :html]
+  config.app = Rails.application
 end
