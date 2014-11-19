@@ -18,6 +18,8 @@ group :development, :test do
   gem 'guard-livereload', require: false
   gem 'spring-commands-rspec'
   gem "shoulda-matchers", require: false
+  gem 'rspec_api_documentation'
+  gem 'apitome'
 end
 
 group :test do

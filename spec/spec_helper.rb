@@ -58,3 +58,6 @@ RSpec.configure do |config|
   end
 
 end
+RspecApiDocumentation.configure do |config|
+  config.format = :json
+end
