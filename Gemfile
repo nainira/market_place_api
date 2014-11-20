@@ -18,12 +18,15 @@ group :development, :test do
   gem 'guard-livereload', require: false
   gem 'spring-commands-rspec'
   gem "shoulda-matchers", require: false
+  gem 'rspec_api_documentation'
+  gem 'apitome'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'ffaker'
+  gem 'rspec-collection_matchers'
   gem 'guard-rspec'
 end
 
