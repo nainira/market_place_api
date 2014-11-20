@@ -119,4 +119,15 @@ RSpec.describe Api::V1::ProductsController, :type => :controller do
     end
   end # PUT/PATCH #update
 
+  describe "DELETE #destroy" do
+    before(:each) do
+      @user = FactoryGirl.create :user
+      @product = FactoryGirl.create :product, user: @user
+      api_authorization_header @user.auth_token
+      delete :destroy, { user_id: @user.id, id: @product.id }
+    end
+
+    it { is_expected.to respond_with 204 }
+  end
+
 end
