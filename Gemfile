@@ -20,13 +20,13 @@ group :development, :test do
   gem "shoulda-matchers", require: false
   gem 'rspec_api_documentation'
   gem 'apitome'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
-  gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'guard-rspec'
 end
 
