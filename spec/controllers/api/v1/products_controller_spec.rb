@@ -16,6 +16,11 @@ RSpec.describe Api::V1::ProductsController, :type => :controller do
     end
 
     it { is_expected.to respond_with 200 }
+
+    it "has the user as a embedded object" do
+      product_response = json_response[:product]
+      expect(product_response[:user][:email]).to eql @product.user.email
+    end
   end # GET #show
 
   describe "Get #index" do
@@ -32,6 +37,13 @@ RSpec.describe Api::V1::ProductsController, :type => :controller do
       # expect(collection).to have_exactly(n).items
       # expect(collection).to have_at_most(n).items
       # expect(collection).to have_at_least(n).items
+    end
+
+    it "returns the user object into each product" do
+      products_response = json_response[:products]
+      products_response.each do |product_response|
+        expect(product_response[:user]).to be_present
+      end
     end
 
     it { is_expected.to respond_with 200 }
