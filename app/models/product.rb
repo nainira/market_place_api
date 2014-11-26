@@ -11,4 +11,7 @@ class Product < ActiveRecord::Base
   scope :below_or_equal_to_price, lambda { |price|
     where("price <= ?", price)
   }
+  scope :recent, -> {
+    order(:updated_at)
+  }
 end
